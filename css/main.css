@@ -259,6 +259,12 @@ a.badge:active {
   text-decoration: none;
   font-weight: 700;
 }
+
+input.button {
+	line-height: 1;
+	/*padding-top: 0;*/
+}
+
 .button:hover,
 .button:focus {
   border-color: #DDE8EE;
@@ -1136,6 +1142,7 @@ fieldset {
 }
 .notify p {
   line-height: 24px;
+  color: #FFF;
 }
 .notify a {
   color: #38505e;
@@ -1153,6 +1160,11 @@ fieldset {
 .notify--error {
   background-image: -webkit-linear-gradient(90deg, #971515 0%, #c93232 100%);
   background-image: -ms-linear-gradient(90deg, #971515 0%, #c93232 100%);
+  color: #fff;
+}
+.notify--info {
+  background-image: -webkit-linear-gradient(90deg, green 0%, #7bd41c 100%);
+  background-image: -ms-linear-gradient(90deg, green 0%, #7bd41c 100%);
   color: #fff;
 }
 .no-radius-top {
