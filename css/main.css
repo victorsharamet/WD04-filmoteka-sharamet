@@ -519,6 +519,37 @@ input.button {
 .comment-add-block__right {
   width: 100%;
 }
+.error {
+  width: 100%;
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.3;
+  background-color: #b51919;
+  border-radius: 5px;
+  color: #FFF;
+  padding: 5px 15px;
+}
+.info-success {
+  width: 100%;
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.3;
+  background-color: #5EB64D;
+  border-radius: 5px;
+  color: #FFF;
+  padding: 5px 15px;
+}
+
+.info-notification {
+  width: 100%;
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.3;
+  background-color: #E3AB00;
+  border-radius: 5px;
+  color: #FFF;
+  padding: 5px 15px;
+}
 /*********блок 2 комментария* *********/
 .comments-title {
   font-size: 26px;

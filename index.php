@@ -12,6 +12,9 @@ $resultSuccess = "";
 $resultError = "";
 $errors = array();
 
+// Удаление фильма
+
+// Save form data to DB
 if ( array_key_exists('newFilm', $_POST) ) {
 	
 	// Обработка ошибок
@@ -75,26 +78,27 @@ if ( $result = mysqli_query($link, $query) ) {
 	<div class="container user-content section-page">
 
 		<!-- Уведомление об успешной отправке в базу данных -->
-		<?php 
-			if ( $resultSuccess != '' ) {
-				?>
-				<div class="notify notify--info mb-20"><?=$resultSuccess?></div>
-				<?php } 
-			if ( $resultError != '' ) {
-				?>
-				<div class="notify notify--info mb-20"><?=$resultError?></div> <?php } ?>
+		<?php if ( @$resultSuccess != '' ) { ?> 
+		<div class="info-success"><?=$resultSuccess?></div>
+		<?php } ?>
+
+		<?php if ( @$resultInfo != '' ) { ?> 
+			<div class="info-notification"><?=$resultInfo?></div>
+		<?php } ?>
+
+		<?php if ( @$resultError != '' ) { ?> 
+			<div class="error"><?=$resultError?></div>
+		<?php } ?>
 
 		<div class="title-1">Фильмотека</div>
 
 		<!-- Вывод фильмов из базы данных -->
-		<?php
-			foreach ($films as $key => $film) { ?>
+		<?php foreach ($films as $key => $film) { ?>
 			<div class="card mb-20">
-				<h4>
-					<div class="title-4"><?=$films[$key]['title']?></div>
-				</h4>
-				<div class="badge"><?=$films[$key]['genre']?></div>
-				<div class="badge"><?=$films[$key]['year']?></div>
+				<h4 class="title-4"><?=$film[$key]['title']?></h4>
+				<div class="button button--delete">Удалить</div>
+				<div class="badge"><?=$film[$key]['genre']?></div>
+				<div class="badge"><?=$film[$key]['year']?></div>
 			</div>				
 		<?php } ?>
 	
