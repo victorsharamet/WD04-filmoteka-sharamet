@@ -285,6 +285,62 @@ input.button {
   color: #FFF;
   background-color: #FFBA00;
 }
+.button--delete {
+  -webkit-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  display: inline-block;
+  line-height: 1;
+  outline: none;
+  border-width: 2px;
+  border-color: #dde8ee;
+  border-style: solid;
+  border-radius: 22px;
+  height: 2.75em;
+  padding-top: 0.68em;
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+  color: #037EC6;
+  background: #FFF;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 6px 20px;
+  font-size: 14px;
+  height: 32px;
+  color: #FFF;
+  border-color: #b51919;
+  background-color: #b51919;
+}
+.button--delete:hover,
+.button--delete:focus {
+  border-color: #DDE8EE;
+  background-color: #DDE8EE;
+  color: #FFF;
+}
+.button--delete:active {
+  border-color: #b4dff6;
+  background-color: #b4dff6;
+  color: #FFF;
+}
+.button--delete:hover,
+.button--delete:focus {
+  border-color: #e70c0c;
+  background-color: #e70c0c;
+}
+.button--delete:active {
+  border-color: #990101;
+  background-color: #990101;
+}
+a.button--delete,
+a.button--delete:hover,
+a.button--delete:focus,
+.user-content a.button--delete,
+.user-content a.button--delete:hover,
+.user-content a.button--delete:focus {
+  color: #FFF;
+  text-decoration: none;
+}
 .button--edit:hover,
 .button--edit:focus {
   border-color: #FFCF3E;
@@ -480,6 +536,14 @@ input.button {
 .card-wrapper-fixed-size {
   width: 360px;
 }
+.card__header {
+	display: flex;
+    justify-content: space-between;
+    align-items: top;
+}
+.card__header>* {
+	margin-top: 0 !important;
+} 
 .comment-register {
   background-color: #f6f7f8;
   padding: 50px 0;
