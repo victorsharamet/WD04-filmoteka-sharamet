@@ -103,7 +103,10 @@ if ( $result = mysqli_query($link, $query) ) {
 			<div class="card mb-20">
 				<div class="card__header">
 					<h4 class="title-4"><?=$film[$key]['title']?></h4>
-					<a href="?action=delete&id=<?=$film['id']?>" class="button button--delete">Удалить</a>
+					<div class="buttons">
+						<a href="?action=delete&id=<?=$film['id']?>" class="button button--edit">Редактировать</a>
+						<a href="?action=delete&id=<?=$film['id']?>" class="button button--delete">Удалить</a>
+					</div>
 				</div>
 				<div class="badge"><?=$film[$key]['genre']?></div>
 				<div class="badge"><?=$film[$key]['year']?></div>

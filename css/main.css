@@ -259,12 +259,10 @@ a.badge:active {
   text-decoration: none;
   font-weight: 700;
 }
-
 input.button {
 	line-height: 1;
 	/*padding-top: 0;*/
 }
-
 .button:hover,
 .button:focus {
   border-color: #DDE8EE;
@@ -281,9 +279,28 @@ input.button {
   margin-right: 5px;
 }
 .button--edit {
-  border-color: #FFBA00;
+  -webkit-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  display: inline-block;
+  line-height: 1;
+  outline: none;
+  border-width: 2px;
+  border-color: #dde8ee;
+  border-style: solid;
+  border-radius: 22px;
+  height: 2.75em;
+  padding-top: 0.68em;
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+  color: #037EC6;
+  background: #FFF;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 700;
   color: #FFF;
-  background-color: #FFBA00;
+  border-color: #ffba00;
+  background-color: #ffba00;
 }
 .button--delete {
   -webkit-transition: all 0.2s ease-in;
@@ -338,6 +355,15 @@ a.button--delete:focus,
 .user-content a.button--delete,
 .user-content a.button--delete:hover,
 .user-content a.button--delete:focus {
+  color: #FFF;
+  text-decoration: none;
+}
+a.button--edit,
+a.button--edit:hover,
+a.button--edit:focus,
+.user-content a.button--edit,
+.user-content a.button--edit:hover,
+.user-content a.button--edit:focus {
   color: #FFF;
   text-decoration: none;
 }
