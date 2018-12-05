@@ -18,6 +18,7 @@ if ( @$_GET['action'] == 'delete' ) {
 }
 
 // Save form data to DB
+// Save form data to DB
 if ( array_key_exists('newFilm', $_POST) ) {
 	
 	// Обработка ошибок
