@@ -47,6 +47,8 @@ if ( array_key_exists('newFilm', $_POST) ) {
 
 		if ( mysqli_query($link, $query) ) {
 			$resultSuccess = "<p>Фильм был успешно добавлен!</p>";
+		} else {
+			$resultError = "<p>Что-то пошло не так. Добавьте фильм еще раз!</p>";
 		}
 	}	
 }

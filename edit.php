@@ -10,15 +10,7 @@ if ( mysqli_connect_error() ) {
 // Save form data to DB
 $errors = array();
 
-// Getting film from DB
-$query = "SELECT * FROM `films` WHERE id = '" . mysqli_real_escape_string($link, $_GET['id']) . "' LIMIT 1";
-$result = mysqli_query($link, $query);
-
-if ( $result = mysqli_query($link, $query) ) {
-	$film = mysqli_fetch_array($result);
-}
-
-// Save form data to DB
+// UPDATE film data in DB
 if ( array_key_exists('update-film', $_POST) ) {
 	
 	// Обработка ошибок
@@ -39,18 +31,22 @@ if ( array_key_exists('update-film', $_POST) ) {
 					SET title = '" . mysqli_real_escape_string($link, $_POST['title']) . "', 
 						genre = '" . mysqli_real_escape_string($link, $_POST['genre']) . "', 
 						year = '" . mysqli_real_escape_string($link, $_POST['year']) . "' 
-						WHERE id = ".$film['id']." LIMIT 1"";
-
-		 VALUES (
-		'" . mysqli_real_escape_string($link, $_POST['title']) . "', 
-		'" . mysqli_real_escape_string($link, $_POST['genre']) . "', 
-		'" . mysqli_real_escape_string($link, $_POST['year']) . "'
-		)";
+						WHERE id = "mysqli_real_escape_string($link, $_GET['id'])" LIMIT 1";
 
 		if ( mysqli_query($link, $query) ) {
-			$resultSuccess = "<p>Фильм был успешно добавлен!</p>";
+			$resultInfo = "<p>Фильм был успешно обновлен!</p>";
+		} else {
+			$resultError = "<p>Что-то пошло не так. Добавьте фильм еще раз!</p>";
 		}
 	}	
+}
+
+// Getting film from DB
+$query = "SELECT * FROM `films` WHERE id = '" . mysqli_real_escape_string($link, $_GET['id']) . "' LIMIT 1";
+$result = mysqli_query($link, $query);
+
+if ( $result = mysqli_query($link, $query) ) {
+	$film = mysqli_fetch_array($result);
 }
 
 // Удаление фильма
@@ -100,9 +96,9 @@ if ( @$_GET['action'] == 'delete' ) {
 
 		<div class="title-1">Фильм <?=$film[$key]['title']?></div>
 
-		<div class="panel-holder mt-0 mb-40">
+		<div class="panel-holder mt-0 mb-20">
 			<div class="title-3 mt-0">Редактировать фильм</div>
-			<form action="index.php" method="POST">
+			<form action="edit.php?id=<?=$film['id']?>" method="POST">
 
 				<!-- Показываем ошибки если поля не заполнены -->
 				<?php 
@@ -144,6 +140,9 @@ if ( @$_GET['action'] == 'delete' ) {
 				<input class="button" type="submit" name="update-film" value="Обновить информацию">
 			</form>
 		</div>
+			<div class="mb-100">
+				<a href="index.php" class="button">Вернуться на главную</a>
+			</div>
 	</div><!-- build:jsLibs js/libs.js -->
 	<script src="libs/jquery/jquery.min.js"></script><!-- endbuild -->
 	<!-- build:jsVendor js/vendor.js -->
