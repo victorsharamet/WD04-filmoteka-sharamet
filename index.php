@@ -104,7 +104,7 @@ if ( $result = mysqli_query($link, $query) ) {
 				<div class="card__header">
 					<h4 class="title-4"><?=$film[$key]['title']?></h4>
 					<div class="buttons">
-						<a href="?action=delete&id=<?=$film['id']?>" class="button button--edit">Редактировать</a>
+						<a href="edit?id=<?=$film['id']?>" class="button button--edit">Редактировать</a>
 						<a href="?action=delete&id=<?=$film['id']?>" class="button button--delete">Удалить</a>
 					</div>
 				</div>
